@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pig Latin Converter</title>
+</head>
+<body>
+  <h2>Pig Latin Translator 🐷</h2>
+  <input type="text" id="inputText" placeholder="Enter your text here">
+  <button onclick="convert()">Translate</button>
+  <p id="outputText"></p>
+
+  <script>
+    function convert() {
+      let text = document.getElementById("inputText").value;
+      let words = text.split(" ");
+      let result = words.map(w => translateWord(w)).join(" ");
+      document.getElementById("outputText").innerText = result;
+    }
+
+    function translateWord(word) {
+      let vowels = ["a", "e", "i", "o", "u"];
+      let lc = word.toLowerCase();
+      if (vowels.includes(lc[0]) || lc.startsWith("xr") || lc.startsWith("yt")) {
+        return word + "ay";
+      } else if (lc.includes("qu")) {
+        let i = lc.indexOf("u");
+        return word.slice(i + 1) + word.slice(0, i + 1) + "ay";
+      } else if (lc.indexOf("y") > 0) {
+        let i = lc.indexOf("y");
+        return word.slice(i) + word.slice(0, i) + "ay";
+      } else {
+        let i = 0;
+        while (i < word.length && !vowels.includes(lc[i])) i++;
+        return word.slice(i) + word.slice(0, i) + "ay";
+      }
+    }
+  </script>
+</body>
+</html>

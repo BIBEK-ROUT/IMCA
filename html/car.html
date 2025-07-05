@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Racing Game</title>
+    <style>
+        body {
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #444;
+            overflow: hidden;
+        }
+
+        .game-container {
+            width: 300px;
+            height: 500px;
+            position: relative;
+            border: 2px solid #fff;
+            background-color: #222;
+            overflow: hidden;
+        }
+
+        .road {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+        }
+
+        .car {
+            width: 50px;
+            height: 80px;
+            position: absolute;
+            bottom: 20px;
+            left: 125px;
+            background: url('https://example.com/car.png') no-repeat center;
+            background-size: contain;
+        }
+
+        .obstacle {
+            width: 50px;
+            height: 80px;
+            position: absolute;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-container">
+        <div class="road">
+            <div class="car" id="player"></div>
+        </div>
+    </div>
+    <script>
+        const car = document.getElementById("player");
+        document.addEventListener("keydown", function(event) {
+            let left = parseInt(window.getComputedStyle(car).getPropertyValue("left"));
+
+            if (event.key === "ArrowLeft" && left > 10) {
+                car.style.left = left - 20 + "px";
+            }
+            if (event.key === "ArrowRight" && left < 240) {
+                car.style.left = left + 20 + "px";
+            }
+        });
+
+        function createObstacle() {
+            const obstacle = document.createElement("div");
+            obstacle.classList.add("obstacle");
+            document.querySelector(".road").appendChild(obstacle);
+
+            let obstacleLeft = Math.random() * 250;
+            obstacle.style.left = obstacleLeft + "px";
+            obstacle.style.top = "-100px";
+
+            let obstacleInterval = setInterval(() => {
+                let obstacleTop = parseInt(window.getComputedStyle(obstacle).getPropertyValue("top"));
+                if (obstacleTop > 500) {
+                    obstacle.remove();
+                    clearInterval(obstacleInterval);
+                } else {
+                    obstacle.style.top = obstacleTop + 5 + "px";
+                }
+
+                // Collision detection
+                let carLeft = parseInt(window.getComputedStyle(car).getPropertyValue("left"));
+                let carTop = parseInt(window.getComputedStyle(car).getPropertyValue("top"));
+
+                if (
+                    obstacleLeft < carLeft + 50 &&
+                    obstacleLeft + 50 > carLeft &&
+                    obstacleTop > 400
+                ) {
+                    alert("Game Over!");
+                    location.reload();
+                }
+            }, 50);
+        }
+
+        setInterval(createObstacle, 2000); // Obstacles spawn every 2 seconds
+    </script>
+</body>
+</html>

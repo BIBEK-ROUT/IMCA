@@ -95,7 +95,13 @@ int main()
     }
     printf("displaying the element:");
     display(&q);    
-    printf("element which dequeue:%d",dequeue(&q));
+    printf("element which dequeue:%d",data=dequeue(&q));
+    enqueue(&q,data);
+    printf("element which dequeue:%d",data=dequeue(&q));
+    enqueue(&q,data);
+    printf("element which dequeue:%d",data=dequeue(&q));
+    enqueue(&q,data);
+    printf("displaying the element:");
     display(&q);
     return 0;
 }

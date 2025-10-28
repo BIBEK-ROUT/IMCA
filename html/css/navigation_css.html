@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navigation Bar Container */
+    .navbar {
+      background-color: #333;
+      overflow: hidden /* Clears floats */
+    }
+
+    /* Nav Links */
+    .navbar a {
+      float: left;
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    /* Hover effect */
+    .navbar a:hover {
+      background-color: #575757;
+    }
+
+    /* Active link style */
+    .navbar a.active {
+      background-color: #04AA6D;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="#" class="active">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+  </div>
+
+</body>
+</html>

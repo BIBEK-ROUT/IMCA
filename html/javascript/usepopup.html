@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Popups Demo</title>
+</head>
+<body>
+  <script>
+    alert("Welcome to the popup zone!");
+
+    let result = confirm("Do you want to see a secret?");
+    if (result) {
+      let secret = prompt("Enter a secret code:");
+      alert("Your secret code is: " + secret);
+    } else {
+      alert("Okay, maybe next time!");
+    }
+  </script>
+</body>
+</html>

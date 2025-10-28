@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>JavaScript Demo</title>
+    <script type="text/javascript">
+        var x = prompt("Enter the value of x:");
+        window.onclick = function() {
+            if (x === null || x === "") {
+                document.getElementById("Demo").innerHTML = "No value entered.";
+            } else {
+                document.getElementById("Demo").innerHTML = "The value of x is: " + x;
+            }
+            document.write("<p>the value is:</p>"+x);
+        };
+    </script>
+</head>
+<body>
+    <p>allua politics</p>
+    <p id="Demo">
+        <!-- The value of x will be displayed here -->
+    </p>
+</body>
+</html>

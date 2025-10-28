@@ -45,10 +45,22 @@ void display()
     }
     printf("\n");
 }
-void reverse()
+ssl* reverseStack(ssl* head)
 {
-     
+    ssl *reversed = NULL;
+    ssl *temp = head;
+
+    while (temp != NULL) {
+        ssl *newNode = (ssl *)malloc(sizeof(ssl));
+        newNode->data = temp->data;
+        newNode->next = reversed;
+        reversed = newNode;
+        temp = temp->next;
+    }
+
+    return reversed;
 }
+
 int main()
 {
     char ch;
@@ -67,6 +79,10 @@ int main()
     display();
     pop();
     printf("Displaying the elements after poping:");
+    display();
+    reverseStack(head);
+    head = reverseStack(head);
+    printf("Displaying the elements after reversing:");
     display();
     return 0;
 }

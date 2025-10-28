@@ -41,7 +41,7 @@ void create_sorted(poly **head, int expo, float coffe)
     }
 
     // Traverse to insert
-    while (temp->next != NULL && temp->next->expo >= expo) {
+    while (temp->next != NULL && temp->expo>=expo) {
         prev = temp;
         temp = temp->next;
     }
@@ -52,7 +52,15 @@ void create_sorted(poly **head, int expo, float coffe)
         free(node);
         return;
     }
+    else if (temp->expo < expo) {
+        // Insert before temp
+        if (prev != NULL) {
+            prev->next = node;
+            node->next = temp;
+            return;
+        } 
 
+    }
     // Insert node
     node->next = temp->next;
     temp->next = node;

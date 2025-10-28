@@ -1,0 +1,21 @@
+/* Element Selector */
+h1 {
+  color: navy;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Class Selector */
+.intro {
+  color: green;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* ID Selector */
+#footer {
+  background-color: lightgray;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+}

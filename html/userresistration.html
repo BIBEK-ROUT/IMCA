@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>creating a user resistration form</h1>
+    <form action="/submit" method="post">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" pattern="[a-zA-Z]{3,6}" title="Only letters, at least 3" placeholder="Enter your name:" required><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" placeholder="Enter your age:" ><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" placeholder="Enter your email:"><br><br>
+        <label for="password">Password:</label>
+        <input type="password"  ><br><br>
+        <label for="date">Date</label>
+        <input type="date"><br><br>
+        <label for="color">color:</label>
+        <input type="color"><br><br>
+        <label for="range">Rate us:</label>
+        <input type="range" min="0" max="10"><br><br>
+        <p>Select your skills:</p>
+<input type="checkbox" id="html">
+<label for="html">HTML</label><br>
+
+<input type="checkbox" id="css">
+<label for="css">CSS</label><br>
+
+<input type="checkbox" id="python">
+<label for="python">Python</label><br><br>
+<p>choose the correct one:</p>
+<input type="radio" name="gender" id="male">
+<label for="male">Male</label>
+<input type="radio" name="gender" id="female">
+<label for="female">Female</label>
+<input type="radio" name="gender" id="others">
+<label for="others">Others</label><br><br>
+<label for="country">select your country:</label>
+<select name="country">
+    <option value="ind">India</option>
+    <option value="uk">United kingdom</option>
+    <option value="usa">United state of america</option>
+</select><br><br>
+<label for="message">Message:</label>
+<textarea id="message" name="message" rows="5" cols="40" placeholder="Enter your message here:"></textarea><br><br>
+<label for="language">Favorite Language:</label>
+<select id="language">
+  <option disabled selected>-- Select one --</option>
+  <option value="html">HTML</option>
+  <option value="css">CSS</option>
+  <option value="js">JavaScript</option>
+</select>
+
+    </form>
+</body>
+</html>

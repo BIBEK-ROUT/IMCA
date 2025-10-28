@@ -58,7 +58,7 @@ int inftopos()
                 push(symbol);
                 break;
             case ')':
-                while((next=pop())!= '(')
+                while((next=pop())!= '(') 
                 {
                     postfix[j++]=next;
                 }
@@ -78,6 +78,7 @@ int inftopos()
                 postfix[j++]=symbol;
                 break;
         }
+        
     }
     while(!isempty())
     {

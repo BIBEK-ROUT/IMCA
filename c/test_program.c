@@ -32,7 +32,7 @@ int main() {
     scanf("%s", expr);
 
     if (isBalanced(expr))
-        printf("Balanced ✅\n");
+        printf("Balanced \n");
     else
         printf("Not Balanced ❌\n");
 

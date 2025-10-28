@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>JS Output Methods</title>
+</head>
+<body>
+
+  <h2>JavaScript Output Demo</h2>
+
+  <p id="output-area">This text will change using <code>innerHTML</code>.</p>
+
+  <script>
+    // 1. innerHTML – Update a specific part of the page
+    document.getElementById("output-area").innerHTML = "✅ Updated using innerHTML!";
+
+    // 2. document.write – Write directly to the document
+    document.write("<p>✅ This is added using document.write()</p>");
+
+    // 3. alert – Popup message to the user
+    alert("✅ This is an alert box using alert()");
+
+    // 4. console.log – Developer-only output in console
+    console.log("✅ Logged in the console using console.log()");
+  </script>
+
+</body>
+</html>
